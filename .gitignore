@@ -1,0 +1,42 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environment
+eegdenoise/
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+# Literature files
+literature/
+# OS files
+.DS_Store
+
+# Results / outputs
+results/
+*.log
+
+
+
+# Keep data folder structure if needed
+!data/README.md
+
+# Model checkpoints
+*.pt
+*.pth
+*.ckpt
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Build / packaging
+build/
+dist/
+*.egg-info/
+

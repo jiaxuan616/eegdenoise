@@ -1,0 +1,41 @@
+name: eegdenoise
+
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  # Python version
+  - python=3.10
+  - pip
+
+  # Core numerical/scientific stack
+  - numpy
+  - scipy
+  - scikit-learn
+  - pandas
+
+  # Plotting / progress
+  - matplotlib
+  - tqdm
+
+  # Data / EEG processing
+  - h5py
+  - mne
+
+  # Packages installed via pip
+  - pip:
+      # PyTorch CUDA 12.4 wheels
+      - --index-url https://download.pytorch.org/whl/cu124
+      - --extra-index-url https://pypi.org/simple
+      - torch==2.6.0
+      - torchvision==0.21.0
+      - torchaudio==2.6.0
+
+      # EMD baseline
+      # Provides: from PyEMD import EMD
+      # Note: do not replace with pyemd; that is a different package.
+      - EMD-signal
+
+# conda env create -f environment.yml
+# conda activate eegdenoise

@@ -1,0 +1,1 @@
+scp -P 12345 -r "D:\大三下学习资料\人工智能与计算思维\project\EEGdenoiseNet\eegdenoise" dyc@101.6.160.66:/home/dyc/project/EEGdenoiseNet
