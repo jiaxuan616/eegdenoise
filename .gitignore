@@ -19,9 +19,8 @@ literature/
 .DS_Store
 
 # Results / outputs
-results/
-*.log
-
+results/*
+!results/README.md
 
 
 # Keep data folder structure if needed
