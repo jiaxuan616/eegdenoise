@@ -43,8 +43,9 @@ def main():
                         default=None, help="Noise type to denoise (if not given, interactive prompt)")
     parser.add_argument("--models", nargs="*",
                         default=None,
-                        help="Which deep models to run (default: all five).  "
-                             "Choices: fcNN Simple_CNN Complex_CNN RNN_lstm Novel_CNN")
+                        help="Which deep models to run. "
+                            "Choices: fcNN Simple_CNN Complex_CNN RNN_lstm Novel_CNN EEGDNet")
+
 
     # ---- hyperparameters ----
     parser.add_argument("--epochs", type=int, default=30)

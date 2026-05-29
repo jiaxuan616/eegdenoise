@@ -5,6 +5,7 @@ from .simple_cnn import simple_CNN
 from .complex_cnn import Complex_CNN
 from .rnn_lstm import RNN_lstm
 from .novel_cnn import Novel_CNN
+from .eegdnet import EEGDNet
 
 MODEL_REGISTRY = {
     "fcNN": fcNN,
@@ -12,12 +13,12 @@ MODEL_REGISTRY = {
     "Complex_CNN": Complex_CNN,
     "RNN_lstm": RNN_lstm,
     "Novel_CNN": Novel_CNN,
+    "EEGDNet": EEGDNet,
 }
 
 
 def build_model(model_name: str, datanum: int):
     """Factory: build a denoising model by name."""
-    import torch.nn as nn
 
     if model_name not in MODEL_REGISTRY:
         raise ValueError(f"Unknown model name: {model_name}. "

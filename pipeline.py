@@ -25,6 +25,7 @@ DEEP_MODELS = [
     "Complex_CNN",
     "RNN_lstm",
     "Novel_CNN",
+    "EEGDNet",
 ]
 
 
@@ -211,7 +212,7 @@ def run_full_pipeline(
     train_num : str
         Run identifier (subfolder name).
     deep_models : list[str] or None
-        List of model names to train.  If None, all five are used.
+        List of model names to train.  If None, all models in DEEP_MODELS are used.
 
     Returns
     -------

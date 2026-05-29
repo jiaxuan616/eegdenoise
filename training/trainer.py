@@ -1,5 +1,5 @@
 """Training loop and helper steps for EEG denoising models."""
-
+import copy
 import os
 import time
 import math
@@ -23,7 +23,7 @@ def _format_input(x, model_name: str):
     fcNN expects  [batch, datanum]
     CNN / LSTM  expect [batch, datanum, 1]
     """
-    if model_name == "fcNN":
+    if model_name in ["fcNN","EEGDNet"]:
         return x
     if x.dim() == 2:
         return x.unsqueeze(-1)
@@ -103,7 +103,7 @@ def train(model, noiseEEG, EEG, noiseEEG_val, EEG_val,
     train_mse_history, val_mse_history = [], []
     mse_grads_history = []
     val_mse_min = 100.0
-    saved_model = model
+    saved_model = copy.deepcopy(model)
 
     train_log_dir = os.path.join(result_location, foldername, train_num, "train")
     val_log_dir = os.path.join(result_location, foldername, train_num, "test")
@@ -152,7 +152,7 @@ def train(model, noiseEEG, EEG, noiseEEG_val, EEG_val,
         if epoch > epochs * 0.8 and val_mse_float < val_mse_min:
             print("yes, smaller", val_mse_float, val_mse_min)
             val_mse_min = val_mse_float
-            saved_model = model
+            saved_model = copy.deepcopy(model)
 
             path = os.path.join(result_location, foldername, train_num, "denoise_model")
             os.makedirs(path, exist_ok=True)
