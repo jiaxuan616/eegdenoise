@@ -19,17 +19,12 @@ literature/
 .DS_Store
 
 # Results / outputs
-results/*
+results/**
 !results/README.md
-
 
 # Keep data folder structure if needed
 !data/README.md
 
-# Model checkpoints
-*.pt
-*.pth
-*.ckpt
 
 # Jupyter
 .ipynb_checkpoints/

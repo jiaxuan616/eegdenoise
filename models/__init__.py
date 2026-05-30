@@ -6,6 +6,7 @@ from .complex_cnn import Complex_CNN
 from .rnn_lstm import RNN_lstm
 from .novel_cnn import Novel_CNN
 from .eegdnet import EEGDNet
+from .denoiseformer import Denoiseformer
 
 MODEL_REGISTRY = {
     "fcNN": fcNN,
@@ -14,6 +15,7 @@ MODEL_REGISTRY = {
     "RNN_lstm": RNN_lstm,
     "Novel_CNN": Novel_CNN,
     "EEGDNet": EEGDNet,
+    "Denoiseformer":Denoiseformer,
 }
 
 

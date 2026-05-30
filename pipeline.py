@@ -26,6 +26,7 @@ DEEP_MODELS = [
     "RNN_lstm",
     "Novel_CNN",
     "EEGDNet",
+    "Denoiseformer",
 ]
 
 

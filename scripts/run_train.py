@@ -44,8 +44,7 @@ def main():
     parser.add_argument("--models", nargs="*",
                         default=None,
                         help="Which deep models to run. "
-                            "Choices: fcNN Simple_CNN Complex_CNN RNN_lstm Novel_CNN EEGDNet")
-
+                            "Choices: fcNN Simple_CNN Complex_CNN RNN_lstm Novel_CNN EEGDNet Denoiseformer")
 
     # ---- hyperparameters ----
     parser.add_argument("--epochs", type=int, default=30)
