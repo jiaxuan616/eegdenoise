@@ -72,10 +72,10 @@ def filter_denoise(noisy_eeg, noise_type, fs):
     noisy_eeg = np.asarray(noisy_eeg)
 
     if noise_type == "EOG":
-        return _apply_to_batch(noisy_eeg, lambda x: _butter_filter_1d(x, fs=fs, lowcut=12))
+        return _apply_to_batch(noisy_eeg, lambda x: _butter_filter_1d(x, fs=fs, lowcut=12, highcut=80))
     elif noise_type == "EMG":
-        return _apply_to_batch(noisy_eeg, lambda x: _butter_filter_1d(x, fs=fs, lowcut=12, highcut=40))
+        return _apply_to_batch(noisy_eeg, lambda x: _butter_filter_1d(x, fs=fs, lowcut=12, highcut=80))
     elif noise_type == "EOG_EMG":
-        return _apply_to_batch(noisy_eeg, lambda x: _butter_filter_1d(x, fs=fs, lowcut=12))
+        return _apply_to_batch(noisy_eeg, lambda x: _butter_filter_1d(x, fs=fs, lowcut=12, highcut=80))
     else:
         raise ValueError("noise_type must be 'EOG', 'EMG', or 'EOG_EMG'.")

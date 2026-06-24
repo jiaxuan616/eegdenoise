@@ -18,6 +18,9 @@ literature/
 # OS files
 .DS_Store
 
+# Sensitive local files (tokens, keys)
+upload.txt
+
 # Results / outputs
 results/**
 !results/README.md
@@ -34,3 +37,9 @@ build/
 dist/
 *.egg-info/
 
+# notes
+upload.txt
+
+# PPT and Word reports
+*.pptx
+*.docx
